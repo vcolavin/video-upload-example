@@ -11,5 +11,6 @@ gem 'pry'
 group :test do
   gem 'database_cleaner'
   gem 'rspec'
+  gem 'rspec-rails'
   gem 'shoulda-matchers', '~> 3.1'
 end
