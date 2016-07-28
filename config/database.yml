@@ -14,5 +14,5 @@ test:
 production:
   <<: *default
   database: video-upload-example_production
-  username: forest
+  username: video-upload-example
   password: <%= ENV['VIDEO_UPLOAD_EXAMPLE_DATABASE_PASSWORD'] %>
