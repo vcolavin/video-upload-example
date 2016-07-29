@@ -2,9 +2,10 @@
 
 <%= form_for @video do |f| %>
   <%= f.text_field :title, placeholder: "Title", required: true %>
-  <%= f.file_field :video, required: true %>
-  <div id="progress">
+  <%= f.file_field :video, required: true, accept: 'video/mp4' %>
+  <div class="progress">
       <div class="bar" style="width: 0%;"></div>
+      <div class="remaining-seconds">0s</div>
   </div>
-  <%= f.submit "Upload", data: { disable_with: 'Uploading' } %>
 <% end %>
+  <%= submit_tag "Upload", data: { disable_with: 'Uploading' }, id: "submit-video" %>

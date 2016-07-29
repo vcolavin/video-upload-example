@@ -1,4 +1,12 @@
-#progress .bar {
+.progress {
+  width: 100px;
+}
+
+.progress .bar {
   height: 10px;
   background-color: blue
+}
+
+.progress .remaining-seconds {
+  display: none;
 }
