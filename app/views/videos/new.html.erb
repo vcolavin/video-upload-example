@@ -1,0 +1,10 @@
+<h2>UPLOAD A NEW ONE</h2>
+
+<%= form_for @video do |f| %>
+  <%= f.text_field :title, placeholder: "Title", required: true %>
+  <%= f.file_field :video, required: true %>
+  <div id="progress">
+      <div class="bar" style="width: 0%;"></div>
+  </div>
+  <%= f.submit "Upload", data: { disable_with: 'Uploading' } %>
+<% end %>
