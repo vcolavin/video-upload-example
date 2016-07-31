@@ -6,7 +6,6 @@ $(function () {
         .removeAttr('disabled')
         .click(function () {
           data.context = $('#submit-video').attr('value', 'Uploading...')
-          // data.context = $('<p/>').text('Uploading...').replaceAll($(this));
           data.submit();
         });
     },
