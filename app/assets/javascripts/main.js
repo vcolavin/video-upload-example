@@ -2,10 +2,10 @@ $(function () {
   $('#new_video').fileupload({
     dataType: 'script',
     add: function (e, data) {
-      data.context = $('#submit-video')
+      $('#submit-video')
         .removeAttr('disabled')
         .click(function () {
-          data.context = $('#submit-video').attr('value', 'Uploading...')
+          $('#submit-video').attr('value', 'Uploading...')
           data.submit();
         });
     },
@@ -17,10 +17,11 @@ $(function () {
       $('.errors')
         .text(data.jqXHR.responseText)
         .css('display', 'inline')
+      $('#submit-video').attr('value', '   :(   ')
     },
     done: function(e, data) {
-      data.context = $('#submit-video')
-        .attr('value', 'Uploaded!')
+      $('#submit-video').attr('value', 'Uploaded!')
+      $('.errors').css('display', 'none')
     }
   })
 })
