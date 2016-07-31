@@ -2,10 +2,10 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.3'
 
-gem 'jbuilder', '~> 2.0'
 gem 'jquery-fileupload-rails'
 gem 'jquery-rails'
 gem 'paperclip', "~> 5.0.0"
+gem 'paperclip-av-transcoder'
 gem 'pg'
 gem 'pry'
 gem 'will_paginate', '~> 3.1.0'

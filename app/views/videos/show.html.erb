@@ -1,6 +1,7 @@
 <div class="video-title">
-  <%= @video.title %>
+  <%= "#{@video.title}, length: #{@video.length_in_seconds}s" %>
 </div>
+<%= "format: #{@video.video_content_type}" %>
 <%= video_tag(@video.video.url, controls: true) %>
 
 <%= link_to "upload a new one!", :new_video %>
