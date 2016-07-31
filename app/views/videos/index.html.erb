@@ -1,8 +1,7 @@
 <h2>THIS IS THE VIDEOS INDEX</h2>
 
 <% @videos.each do |video| %>
-  <%= video.title %>
-  <br>
+  <%= video_tag(video.video.url, controls: true) %>
 <% end %>
 
 <%= will_paginate @posts %>
