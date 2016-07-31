@@ -14,3 +14,7 @@
 .errors {
   display: none;
 }
+
+.video-title {
+  display: block;
+}

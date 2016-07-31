@@ -1,0 +1,7 @@
+<div class="video-title">
+  <%= @video.title %>
+</div>
+<%= video_tag(@video.video.url, controls: true) %>
+
+<%= link_to "upload a new one!", :new_video %>
+<%= link_to "return to index", videos_path %>

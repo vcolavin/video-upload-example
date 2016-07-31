@@ -1,7 +1,8 @@
 $(function () {
   $('#new_video').fileupload({
-    dataType: 'script',
+    dataType: 'json',
     add: function (e, data) {
+      // make this click or form submit, so that enter works
       $('#submit-video')
         .removeAttr('disabled')
         .click(function () {
@@ -28,6 +29,8 @@ $(function () {
     done: function(e, data) {
       $('#submit-video').attr('value', 'Uploaded!')
       $('.errors').css('display', 'none')
+
+      window.location.href = data.jqXHR.responseJSON.videoUrl
     }
   })
 })
