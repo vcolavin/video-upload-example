@@ -7,9 +7,12 @@ class VideosController < ApplicationController
   end
 
   def create
-    @video = Video.create(video_params)
+    @video = Video.new(video_params)
 
-    redirect_to videos_path
+    if @video.save
+      render(json: "hey".to_json, content_type: request.format)
+    end
+
   end
 
   def delete

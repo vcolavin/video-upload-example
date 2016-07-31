@@ -1,19 +1,25 @@
 $(function () {
   $('#new_video').fileupload({
-    // done: function(e, data){},
-    dataType: "json",
+    dataType: 'script',
     add: function (e, data) {
-      $("#submit-video").on('click', function () {
+      data.context = $('#submit-video')
+        .removeAttr('disabled')
+        .click(function () {
+          data.context = $('#submit-video').attr('value', 'Uploading...')
+          // data.context = $('<p/>').text('Uploading...').replaceAll($(this));
           data.submit();
-        })
-      },
+        });
+    },
     progressall: function(e, data) {
       var progress = parseInt(data.loaded / data.total * 100, 10);
       $('.progress .bar').css('width', progress + '%')
-    }
-    // done: function(e, data) {
-      // follow redirect
-    // }
+    },
+    fail: function(e, data) {
+      // put up a notification!
+    },
+    done: function(e, data) {
+      data.context = $('#submit-video')
+        .attr('value', 'Uploaded!')
     }
   })
 })
