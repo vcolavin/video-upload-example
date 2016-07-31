@@ -14,7 +14,9 @@ $(function () {
       $('.progress .bar').css('width', progress + '%')
     },
     fail: function(e, data) {
-      // put up a notification!
+      $('.errors')
+        .text(data.jqXHR.responseText)
+        .css('display', 'inline')
     },
     done: function(e, data) {
       data.context = $('#submit-video')

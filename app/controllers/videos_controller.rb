@@ -12,6 +12,8 @@ class VideosController < ApplicationController
 
     if @video.save
       render(json: "hey".to_json, content_type: request.format)
+    else
+      render(json: @video.errors.full_messages.to_json, status: 400, content_type: request.format)
     end
   end
 

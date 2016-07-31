@@ -1,6 +1,7 @@
 <h2>UPLOAD A NEW ONE</h2>
 
 <%= form_for @video do |f| %>
+  <div class="errors"></div>
   <%= f.text_field :title, placeholder: "Title", required: true %>
   <%= f.file_field :video, required: true, accept: 'video/mp4' %>
   <div class="progress">
