@@ -8,6 +8,7 @@ gem 'jquery-rails'
 gem 'paperclip', "~> 5.0.0"
 gem 'pg'
 gem 'pry'
+gem 'will_paginate', '~> 3.1.0'
 
 group :test do
   gem 'capybara'

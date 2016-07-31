@@ -1,3 +1,10 @@
 <h2>THIS IS THE VIDEOS INDEX</h2>
 
+<% @videos.each do |video| %>
+  <%= video.title %>
+  <br>
+<% end %>
+
+<%= will_paginate @posts %>
+
 <%= link_to "upload a new one!", :new_video %>

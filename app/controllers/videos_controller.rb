@@ -1,5 +1,6 @@
 class VideosController < ApplicationController
   def index
+    @videos = Video.paginate(:page => params[:page], :per_page => 5)
   end
 
   def new
@@ -12,7 +13,6 @@ class VideosController < ApplicationController
     if @video.save
       render(json: "hey".to_json, content_type: request.format)
     end
-
   end
 
   def delete

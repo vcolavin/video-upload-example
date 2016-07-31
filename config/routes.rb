@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :videos, only: [:index, :new, :create, :delete]
+  resources :videos
 
   root to:"videos#index"
 end
