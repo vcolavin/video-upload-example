@@ -108,3 +108,24 @@ nav a {
 #submit-video {
   font-size: 2em;
 }
+
+/* index page */
+
+.video {
+  margin: 3em 0 2em 0;
+}
+
+h3.video-title {
+  font-size: 2em;
+  padding: 0;
+  margin: 0;
+}
+
+.video-title a {
+  font-size: 1em;
+}
+
+.pagination {
+  margin: 2em 0 2em 0;
+  font-size: 1.25em;
+}

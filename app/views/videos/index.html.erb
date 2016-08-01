@@ -1,10 +1,12 @@
 <h2>Index of videos.</h2>
 
 <% @videos.each do |video| %>
-  <%= link_to video.title, video_path(video), class: 'video-title' %>
-  <%= video_tag(video.video.url, controls: true) %>
+  <div class="video">
+    <h3 class='video-title'>
+      <%= link_to video.title, video_path(video) %>
+    </h3>
+    <%= video_tag(video.video.url, controls: true) %>
+  </div>
 <% end %>
 
 <%= will_paginate @posts %>
-
-<%= link_to "upload a new one!", :new_video %>
