@@ -8,22 +8,29 @@
   <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 </head>
 <body>
-  <div class="header">
-    <h1 class="title">
-      <span class="cool-title-bracket">[</span>VUE<span class="cool-title-bracket">]</span>
-    </h1>
-    <nav>
-      <% if params[:action] != 'new' %>
-        <%= link_to "Upload a new video.", new_video_path %>
-      <% end %>
+  <div class="wrapper">
+    <div class="header">
+      <h1 class="title">
+        <span class="cool-title-bracket">[</span>VUE<span class="cool-title-bracket">]</span>
+      </h1>
+      <nav>
+        <% if params[:action] != 'new' %>
+          <%= link_to "Upload a new video.", new_video_path %>
+        <% end %>
 
-      <% if params[:action] != 'index' %>
-        <%= link_to "View all videos.", videos_path %>
-      <% end %>
-    </nav>
+        <% if params[:action] != 'index' %>
+          <%= link_to "View all videos.", videos_path %>
+        <% end %>
+      </nav>
+    </div>
+
+    <%= yield %>
+
+    <div class="footer-space-filler"></div>
   </div>
-
-  <%= yield %>
+  <div class="footer">
+    <a href="http://vcolavin.com">Vincent Colavin</a>, 2016
+  </div>
 
 </body>
 </html>

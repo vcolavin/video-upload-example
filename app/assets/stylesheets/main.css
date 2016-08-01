@@ -7,7 +7,26 @@ body {
   font-family: 'Open Sans';
 }
 
+.wrapper {
+  min-height: 100vh;
+}
+
+.footer-space-filler {
+  height: 1.5em;
+  clear: both;
+  position: bottom;
+}
+
+.footer {
+  height: 1.5em;
+  clear: both;
+  position: bottom;
+  margin-top: -1.5em;  /* must be equal to height * -1 */
+  text-align: center;
+}
+
 .header {
+  position: relative;
   width: 100%;
   border-bottom: 10px solid black;
 }
@@ -34,6 +53,9 @@ nav a {
   text-decoration: none;
   padding: 0 1em 0 1em;
 }
+
+
+/* new page */
 
 .progress {
   width: 150px;
