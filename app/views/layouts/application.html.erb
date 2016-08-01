@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MyProject</title>
+  <title>VUE | <%= params[:action].capitalize %></title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 </head>
 <body>
+  <div class="header">
+    <h1 class="title">
+      <span class="cool-title-bracket">[</span>VUE<span class="cool-title-bracket">]</span>
+    </h1>
+    <nav>
+      <% if params[:action] != 'new' %>
+        <%= link_to "Upload a new video.", new_video_path %>
+      <% end %>
 
-  <h1>Video watcher</h1>
+      <% if params[:action] != 'index' %>
+        <%= link_to "View all videos.", videos_path %>
+      <% end %>
+    </nav>
+  </div>
+
   <%= yield %>
 
 </body>
