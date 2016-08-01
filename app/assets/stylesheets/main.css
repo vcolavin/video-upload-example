@@ -4,7 +4,7 @@ body {
   padding: 0;
   margin: 0;
   color: black;
-  font-family: 'Open Sans';
+  font-family: 'Reem Kufi', sans-serif;
 }
 
 .wrapper {
@@ -52,6 +52,10 @@ nav a {
   font-size: 1.5em;
   text-decoration: none;
   padding: 0 1em 0 1em;
+}
+
+.body-content {
+  text-align: center;
 }
 
 
