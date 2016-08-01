@@ -58,16 +58,36 @@ nav a {
   text-align: center;
 }
 
-
 /* new page */
 
+.new_video {
+  width: 200px;
+  margin: auto;
+}
+
+.video-title-field {
+  height: 3em;
+  display: block;
+  margin: auto;
+}
+
+.video-title-field::-webkit-input-placeholder {
+  font-size: 2em;
+  font-family: 'Reem Kufi', sans-serif;
+}
+
+.video-title-field::-moz-placeholder {
+  font-size: 2em;
+  font-family: 'Reem Kufi', sans-serif;
+}
+
 .progress {
-  width: 150px;
+  width: 100%;
 }
 
 .progress .bar {
-  height: 10px;
-  background-color: blue
+  height: 15px;
+  background-color: black
 }
 
 .progress .remaining-seconds {
@@ -75,9 +95,16 @@ nav a {
 }
 
 .errors {
+  padding: 0;
   display: none;
+  list-style: none;
+  color: red;
 }
 
 .video-title {
   display: block;
+}
+
+#submit-video {
+  font-size: 2em;
 }

@@ -6,7 +6,10 @@ $(function () {
       $('#submit-video')
         .removeAttr('disabled')
         .click(function () {
-          $('#submit-video').attr('value', 'Uploading...')
+          $('.errors').css('display', 'none')
+          $('#submit-video')
+            .attr('value', 'Processing')
+            .attr('disabled', 'disabled')
           data.submit();
         });
     },
@@ -20,11 +23,19 @@ $(function () {
         .css('display', 'block')
         .text(remainingSeconds + ' seconds remaining')
     },
+
     fail: function(e, data) {
+      var errors = data.jqXHR.responseJSON.map(function(error){
+        return "<li>" + error + "</li>"
+      })
+
       $('.errors')
-        .text(data.jqXHR.responseText)
+        .empty()
+        .append("Error(s):" + errors)
         .css('display', 'inline')
-      $('#submit-video').attr('value', '   :(   ')
+      $('#submit-video')
+        .attr('value', 'Try again')
+        .removeAttr('disabled')
     },
     done: function(e, data) {
       $('#submit-video').attr('value', 'Uploaded!')

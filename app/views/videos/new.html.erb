@@ -1,13 +1,12 @@
-<h2>UPLOAD A NEW ONE</h2>
+<h2>Upload a new one.</h2>
 
 <%= form_for @video do |f| %>
-  <div class="errors"></div>
-  <%= f.text_field :title, placeholder: "Title", required: true %>
-  <%= f.file_field :video, required: true, accept: 'video/mp4' %>
+  <ul class="errors"></ul>
+  <%= f.text_field :title, placeholder: "Title", required: true, class: "video-title-field" %>
+  <%= f.file_field :video, required: true, accept: 'video/mp4', class: "video-file-field" %>
   <div class="progress">
       <div class="bar" style="width: 0%;"></div>
       <div class="remaining-seconds">0s</div>
   </div>
 <% end %>
 <%= submit_tag "Upload", data: { disable_with: 'Uploading' }, disabled: true, id: "submit-video" %>
-<%= link_to "return to video index", videos_path %>
