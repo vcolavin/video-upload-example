@@ -1,8 +1,13 @@
-<div class="video-title">
-  <%= "#{@video.title}, length: #{@video.length_in_seconds}s" %>
-</div>
-<%= "format: #{@video.video_content_type}" %>
-<%= video_tag(@video.video.url, controls: true) %>
+<class class="video">
+  <h3 class="video-title">
+    <%= @video.title %>
+  </h3>
 
-<%= link_to "upload a new one!", :new_video %>
-<%= link_to "return to index", videos_path %>
+  <div class="video-details">
+    <span> length: <%= @video.length_in_seconds %> seconds </span>
+    <br>
+    <span> format: <%= @video.video_content_type %> </span>
+  </div>
+
+  <%= video_tag(@video.video.url, controls: true) %>
+</class>
