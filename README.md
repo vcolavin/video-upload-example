@@ -24,6 +24,7 @@ Now that it's got a fancy name, I can't wait for all the VC money to roll in!
 
 ## Known Issues
 - Uploading takes a very long time. This is because videos are encoaded with paperclip-av-transcoder. Before this gem was added, the upload was almost instant, but by transcoding, I am able to get the MP4's length in seconds. I think there must be a way to avoid this.
-- The "choose file" dialog always says "no file chosen"
-- You can't upload a non-MP4 file from the file explorer, but you can drag any file you want onto it.
+  - As a direct result of this, feature tests take way too long as well.
+- The "choose file" dialog "no file chosen" even when one is chosen.
+- You can't upload a non-MP4 file from the file explorer, but you can drag any file you want onto it. The file still gets rejected by the back-end, though.
 - The logo is so cool.
