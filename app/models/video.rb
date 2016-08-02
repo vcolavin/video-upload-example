@@ -1,8 +1,7 @@
 class Video < ActiveRecord::Base
   validates :title, presence: true
   validates :video, presence: true
-  validates_size_of :video, maximum: 5.megabytes, message: "should be no more than 5 MB"
-
+  validates_with AttachmentSizeValidator, attributes: :video, less_than: 5.megabytes
 
   has_attached_file :video,
     styles: {medium: { :geometry => "640x480", :format => 'mp4'}},
