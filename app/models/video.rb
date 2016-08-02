@@ -8,9 +8,9 @@ class Video < ActiveRecord::Base
     styles: {medium: { :geometry => "640x480", :format => 'mp4'}},
     processors: [:transcoder]
 
-  validates_attachment_content_type :video, content_type: /\Avideo\/.*\Z/
+  validates_attachment_content_type :video, content_type: /\Avideo\/mp4\Z/
 
-  validates_attachment_file_name :video, :matches => /mp4\Z/
+  validates_attachment_file_name :video, :matches => /mp4\z/
 
   before_save :set_video_length
 
